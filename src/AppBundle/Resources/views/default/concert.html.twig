@@ -1,0 +1,35 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Blog Post 1
+{% endblock title %}
+
+{% block top %}
+    <section id="home">
+        <div id="main-slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-responsive" src="{{ asset('bundles/app/images/slider/bg4.jpg') }}" alt="slider">
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock top %}
+
+{% block content %}
+    <section id="post">
+        <div id="twitter-feed" class="carousel slide" data-interval="false">
+            <div class="row">
+                <div class="post col-md-12">
+                    <h1>{{ concert.nom}}</h1>
+                    <p>{{ concert.nbrplace }}</p>
+                </div>
+                <div class="item">
+                   
+                    <p>{{ concert.organisateur }}</p>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
