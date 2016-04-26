@@ -73,7 +73,7 @@ class ConcertController extends Controller
      */
     public function listAction()
     {
-        $concerts = $this->getDoctrine()->getRepository('AppBundle:concert')->findAll();
+        $concerts = $this->getDoctrine()->getRepository('AppBundle:Concert')->findAll();
 
         return array('concerts' => $concerts);
     }
@@ -84,7 +84,7 @@ class ConcertController extends Controller
      */
     public function deleteAction(Request $request)
     {
-        if (!$concert = $this->getDoctrine()->getRepository('AppBundle:concert')->findOneById($request->request->get('concert_id'))) {
+        if (!$concert = $this->getDoctrine()->getRepository('AppBundle:Concert')->findOneById($request->request->get('concert_id'))) {
             $this->addFlash('error', 'The concert you want to delete does not exist.');
 
             return $this->redirectToRoute('concert_list');
